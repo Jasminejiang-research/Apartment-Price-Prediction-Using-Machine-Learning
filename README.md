@@ -36,24 +36,27 @@
 
 ## Project Overview
 
-This repo implements a **reproducible machine learning pipeline** for apartment price prediction, covering:
-**data loading → preprocessing → 5-fold cross-validation → baseline & ensemble modeling → model interpretation and ablation analysis**.
+This repo provides a full-stack machine learning workflow for apartment price prediction, designed as an end-to-end, reproducible example of regression modeling. It covers three key components:
 
-#### 🔬Project Focus
+#### 🔬1. Reproducible Regression Pipeline
 
-This project integrates **interpretable machine learning** to investigate a key question:
+A fully automated and modular pipeline is implemented, covering:
+* Data loading → preprocessing → 5-fold cross-validation → full model training and prediction
+* Includes type-aware imputation, encoding strategies, target transformations, and model evaluation
+* Enables robust, reusable experimentation across datasets with minimal manual intervention
 
-> Why does **traditional feature engineering** often fail to improve model performance in the presence of **complex data structures** and **large sample sizes**?
+#### 🔬2. Explainable ML: Why Classic Feature Engineering Often Fails in Complex Settings
 
-I systematically evaluate this through two optimization experiments:
+Using explainability techniques (SHAP), the project explores why traditional feature engineering may fail in high-dimensional, complex, and large-scale datasets—despite careful design (e.g., correlation-based feature pruning, time-feature recasting).
 
-* **Feature engineering** based on EDA-driven hypotheses and time feature construction.
-* **Stacked ensembling**, combining linear and tree-based models to leverage their complementary strengths.
+Key insight: some features with low correlation still carry predictive signal non-linearly, and tree-based models can capture this where linear assumptions break.
 
-#### 🔬Key Insight
+#### 🔬3. Model Stacking to Improve Performance
+The project demonstrates that in such settings, model ensembling (stacking) outperforms individual learners:
 
-In this dataset, **manual feature engineering yields limited gains**, while **model ensembling with a linear meta-learner** (on top of tree and linear base models) delivers a **more robust accuracy boost**, confirming that ensemble strategies are often more effective than hand-crafted transformations in real-world, high-dimensional settings.
-
+* Combines tree-based and linear base models
+* Uses a linear model (Lasso) as the final meta-learner
+* Results in higher accuracy and better generalization compared to traditional feature-driven optimization alone
 
 **Intended audience:** researchers, ML engineers, Data Scientist
 
