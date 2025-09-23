@@ -36,10 +36,10 @@
 
 ## Project Overview
 
-> This repo implements a **reproducible machine learning pipeline** for apartment price prediction, covering:
+This repo implements a **reproducible machine learning pipeline** for apartment price prediction, covering:
 **data loading → preprocessing → 5-fold cross-validation → baseline & ensemble modeling → model interpretation and ablation analysis**.
 
-#### Project Focus
+#### 🔬Project Focus
 
 This project integrates **interpretable machine learning** to investigate a key question:
 
@@ -50,7 +50,7 @@ I systematically evaluate this through two optimization experiments:
 * **Feature engineering** based on EDA-driven hypotheses and time feature construction.
 * **Stacked ensembling**, combining linear and tree-based models to leverage their complementary strengths.
 
-#### Key Insight
+#### 🔬Key Insight
 
 In this dataset, **manual feature engineering yields limited gains**, while **model ensembling with a linear meta-learner** (on top of tree and linear base models) delivers a **more robust accuracy boost**, confirming that ensemble strategies are often more effective than hand-crafted transformations in real-world, high-dimensional settings.
 
